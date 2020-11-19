@@ -1,6 +1,9 @@
-from flask import Flask,render_template,url_for,request,redirect
+from flask import Flask,render_template,url_for,request,redirect,session
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
+db = SQLAlchemy(app)
 
 app.secret_key = b'\xff\x82\x13\xdc\xb0\x8c\x95\t\xfd49\xe8.U\x9a$'
 
